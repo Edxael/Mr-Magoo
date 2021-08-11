@@ -3,6 +3,8 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import tw from './src/lib/tailwind';
 import Login from './src/View/Login'
+import { StoreContext } from 'storeon/react'
+import { store } from './src/store/store'
 
 const desktop = 'flex-1 bg-pureblack-0 justify-center items-center'
 const mobile = 'flex-1 bg-primary-100 justify-center items-center'
@@ -20,6 +22,8 @@ export default function App(props) {
 
 
   return (
-    <Login></Login>
+    <StoreContext.Provider value={store}>
+      <Login></Login>
+    </StoreContext.Provider>
   );
 }
