@@ -75,6 +75,7 @@ module.exports = {
       4: '4px',
       6: '6px',
       8: '8px',
+      full: '9999px'
     },
     fontSize: {
       8: '8px',

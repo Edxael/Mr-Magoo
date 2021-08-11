@@ -2,7 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View } from 'react-native';
 import tw from './src/lib/tailwind';
+
 import Login from './src/View/Login'
+import Dashboard from './src/View/Dashboard';
+
+
 import { StoreContext } from 'storeon/react'
 import { store } from './src/store/store'
 
@@ -23,7 +27,7 @@ export default function App(props) {
 
   return (
     <StoreContext.Provider value={store}>
-      <Login></Login>
+      <Dashboard></Dashboard>
     </StoreContext.Provider>
   );
 }

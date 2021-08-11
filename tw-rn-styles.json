@@ -10371,6 +10371,12 @@
     "borderBottomRightRadius": 8,
     "borderBottomLeftRadius": 8
   },
+  "rounded-full": {
+    "borderTopLeftRadius": 9999,
+    "borderTopRightRadius": 9999,
+    "borderBottomRightRadius": 9999,
+    "borderBottomLeftRadius": 9999
+  },
   "rounded-t-0": {
     "borderTopLeftRadius": 0,
     "borderTopRightRadius": 0
@@ -10394,6 +10400,10 @@
   "rounded-t-8": {
     "borderTopLeftRadius": 8,
     "borderTopRightRadius": 8
+  },
+  "rounded-t-full": {
+    "borderTopLeftRadius": 9999,
+    "borderTopRightRadius": 9999
   },
   "rounded-r-0": {
     "borderTopRightRadius": 0,
@@ -10419,6 +10429,10 @@
     "borderTopRightRadius": 8,
     "borderBottomRightRadius": 8
   },
+  "rounded-r-full": {
+    "borderTopRightRadius": 9999,
+    "borderBottomRightRadius": 9999
+  },
   "rounded-b-0": {
     "borderBottomRightRadius": 0,
     "borderBottomLeftRadius": 0
@@ -10442,6 +10456,10 @@
   "rounded-b-8": {
     "borderBottomRightRadius": 8,
     "borderBottomLeftRadius": 8
+  },
+  "rounded-b-full": {
+    "borderBottomRightRadius": 9999,
+    "borderBottomLeftRadius": 9999
   },
   "rounded-l-0": {
     "borderTopLeftRadius": 0,
@@ -10467,6 +10485,10 @@
     "borderTopLeftRadius": 8,
     "borderBottomLeftRadius": 8
   },
+  "rounded-l-full": {
+    "borderTopLeftRadius": 9999,
+    "borderBottomLeftRadius": 9999
+  },
   "rounded-tl-0": {
     "borderTopLeftRadius": 0
   },
@@ -10484,6 +10506,9 @@
   },
   "rounded-tl-8": {
     "borderTopLeftRadius": 8
+  },
+  "rounded-tl-full": {
+    "borderTopLeftRadius": 9999
   },
   "rounded-tr-0": {
     "borderTopRightRadius": 0
@@ -10503,6 +10528,9 @@
   "rounded-tr-8": {
     "borderTopRightRadius": 8
   },
+  "rounded-tr-full": {
+    "borderTopRightRadius": 9999
+  },
   "rounded-br-0": {
     "borderBottomRightRadius": 0
   },
@@ -10521,6 +10549,9 @@
   "rounded-br-8": {
     "borderBottomRightRadius": 8
   },
+  "rounded-br-full": {
+    "borderBottomRightRadius": 9999
+  },
   "rounded-bl-0": {
     "borderBottomLeftRadius": 0
   },
@@ -10538,6 +10569,9 @@
   },
   "rounded-bl-8": {
     "borderBottomLeftRadius": 8
+  },
+  "rounded-bl-full": {
+    "borderBottomLeftRadius": 9999
   },
   "border-0": {
     "borderTopWidth": 0,
