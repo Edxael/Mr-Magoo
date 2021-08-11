@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Text, View } from 'react-native';
 import tw from './src/lib/tailwind';
-import Login from './src/View/Login'
+// import Login from './src/View/Login'
+import MainNavigation from './src/View/00-MainNavigation';
 
 const desktop = 'flex-1 bg-pureblack-0 justify-center items-center'
 const mobile = 'flex-1 bg-primary-100 justify-center items-center'
@@ -20,6 +21,6 @@ export default function App(props) {
 
 
   return (
-    <Login></Login>
+    <MainNavigation></MainNavigation>
   );
 }
