@@ -6,7 +6,6 @@ import { useStoreon } from 'storeon/react'
 const MainNavigation = () => {
     const { auth } = useStoreon('auth')
 
-    let isUserLoggedIn = false;
     if (auth.isAuthenticated){
        return (
         <SecureNav/>
