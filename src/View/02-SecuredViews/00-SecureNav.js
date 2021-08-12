@@ -2,8 +2,9 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import * as Linking from 'expo-linking';
 
-import { View, Image, Text, TextInput, Button, Pressable } from 'react-native';
+import { View } from 'react-native';
 import tw from '../../lib/tailwind';
 import Header from '../../Components/Header'
 import Navigation from '../../Components/Navigation';
@@ -17,10 +18,15 @@ import TravelView from './Travel'
 import { navigationRef } from '../../Components/RootNavigation'
 
 const Stack = createStackNavigator();
+const prefix = Linking.createURL('/');
 
 const SecureNav = ({navigation}) => {
+  const linking = {
+    prefixes: [prefix],
+  };
+
   return (
-    <NavigationContainer ref={navigationRef} >
+    <NavigationContainer linking={linking} ref={navigationRef} >
       <View style={tw`flex-1`}>
           <Header></Header>
           <View style={tw`flex-row flex-1`}>
