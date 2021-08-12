@@ -1,10 +1,13 @@
 import React from 'react';
 import UnSecureNav from './01-UnsecuredViews/00-UnSecureNav'
 import SecureNav from './02-SecuredViews/00-SecureNav'
+import { useStoreon } from 'storeon/react'
 
 const MainNavigation = () => {
-    let isUserLoggedIn = true;
-    if (isUserLoggedIn){
+    const { auth } = useStoreon('auth')
+
+    let isUserLoggedIn = false;
+    if (auth.isAuthenticated){
        return (
         <SecureNav/>
       );

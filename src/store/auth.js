@@ -2,7 +2,8 @@ const randomId = () => Math.random().toString(36).replace(/[^a-z]+/g, '').substr
 
 const init = () => ({
   auth: {
-    isAuthenticated: false
+    isAuthenticated: false,
+    jwt: '',
   }
 })
 

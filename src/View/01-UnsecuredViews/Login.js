@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Image, Text, TextInput, Button, Pressable } from 'react-native';
-import tw from '../lib/tailwind';
-import logo from '../assets/svg/comphealth-logo.svg'
+import tw from '../../lib/tailwind';
+import logo from '../../assets/svg/comphealth-logo.svg'
 import { useStoreon } from 'storeon/react'
 
 const Login = () => {
