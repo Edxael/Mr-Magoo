@@ -14,7 +14,6 @@ const NavLink = ({ icon, text, isExpanded, children, viewToDisplay }) => {
                 !s.hovered && 'bg-pureblack-5',
                 )}
             onPress={() => { 
-                    console.log(`Navigating to: ${viewToDisplay}`)
                     RootNavigation.navigate(viewToDisplay)
                     }}>
             <View style={tw`flex-row`}>

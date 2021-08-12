@@ -27,11 +27,11 @@ const SecureNav = ({navigation}) => {
               <Navigation navigation={navigation}></Navigation>
               <View style={tw`flex-1 z-20`}>
                   <Stack.Navigator  initialRouteName="AssignmentsView" screenOptions={{ headerShown: false }}>
-                      <Stack.Screen name="AssignmentsView" component={AssignmentsView} options={{ title: 'AssignmentsView title' }} />
-                      <Stack.Screen name="ApplicationView" component={ApplicationView} options={{ title: 'ApplicationView title' }} />
-                      <Stack.Screen name="DocumentsView" component={DocumentsView} options={{ title: 'title DocumentsView' }} />
-                      <Stack.Screen name="TimeEntryView" component={TimeEntryView} options={{ title: 'title TimeEntryView' }} />
-                      <Stack.Screen name="TravelView" component={TravelView} options={{ title: 'title TravelView' }} />
+                      <Stack.Screen name="AssignmentsView" component={AssignmentsView} />
+                      <Stack.Screen name="ApplicationView" component={ApplicationView} />
+                      <Stack.Screen name="DocumentsView" component={DocumentsView} />
+                      <Stack.Screen name="TimeEntryView" component={TimeEntryView} />
+                      <Stack.Screen name="TravelView" component={TravelView} />
                   </Stack.Navigator>
               </View>
           </View>
