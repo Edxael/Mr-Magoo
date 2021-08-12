@@ -26,7 +26,7 @@ const SecureNav = ({navigation}) => {
           <View style={tw`flex-row flex-1`}>
               <Navigation navigation={navigation}></Navigation>
               <View style={tw`flex-1 z-20`}>
-                  <Stack.Navigator  initialRouteName="AssignmentsView">
+                  <Stack.Navigator  initialRouteName="AssignmentsView" screenOptions={{ headerShown: false }}>
                       <Stack.Screen name="AssignmentsView" component={AssignmentsView} options={{ title: 'AssignmentsView title' }} />
                       <Stack.Screen name="ApplicationView" component={ApplicationView} options={{ title: 'ApplicationView title' }} />
                       <Stack.Screen name="DocumentsView" component={DocumentsView} options={{ title: 'title DocumentsView' }} />
