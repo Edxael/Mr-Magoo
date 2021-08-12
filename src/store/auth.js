@@ -37,6 +37,12 @@ const auth = store => {
 
     store.dispatch('auth/isAuthenticated', true)    
   })
+
+  store.on('auth/logout', async (state, { username, password }) => {
+    // Here we will need to clear all data on the store
+    store.dispatch('auth/isAuthenticated', false)    
+  })
+
   store.on('auth/data/update', (state, data) => ({ auth: { ...state.auth, data } }))
   store.on('auth/oidc/update', (state, oidc) => ({ auth: { ...state.auth, oidc } }))
   store.on('auth/isAuthenticated', (state, isAuthenticated) => ({ auth: { ...state.auth, isAuthenticated } }))

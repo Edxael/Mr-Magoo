@@ -1,11 +1,16 @@
 import React from 'react';
-import { View, Image, Text, TextInput, Button, Pressable, ScrollView } from 'react-native';
+import { View, Image, Text, Pressable, useWindowDimensions } from 'react-native';
 import tw from '../lib/tailwind';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCalendarAlt, faFileSignature, faFolderOpen, faClock, faSuitcase, faPhoneAlt, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faFileSignature, faFolderOpen, faClock, faSuitcase, faPhoneAlt, faChevronRight, faChevronLeft, faLock } from '@fortawesome/free-solid-svg-icons'
 import * as RootNavigation from './RootNavigation'
+import { useStoreon } from 'storeon/react'
 
-const NavLink = ({ icon, text, isExpanded, children, viewToDisplay }) => {
+const NavLink = ({ icon, text, isExpanded, children, viewToDisplay, logOut }) => {
+    const { dispatch } = useStoreon()
+    const handleLogOut = async => {
+        dispatch('auth/logout', {})
+    }
     return (
         <Pressable 
             style={ s => tw.style(
@@ -14,6 +19,10 @@ const NavLink = ({ icon, text, isExpanded, children, viewToDisplay }) => {
                 !s.hovered && 'bg-pureblack-5',
                 )}
             onPress={() => { 
+                    if(logOut){
+                        console.log("Login you OUT...")
+                        handleLogOut()
+                    }
                     RootNavigation.navigate(viewToDisplay)
                     }}>
             <View style={tw`flex-row`}>
@@ -26,7 +35,16 @@ const NavLink = ({ icon, text, isExpanded, children, viewToDisplay }) => {
 }
 
 const Navigation = ({navigation}) => {
+    const window = useWindowDimensions();
+    console.log(window)
+
+
     const [isExpanded, setIsExpanded] = React.useState(false)
+
+    // if(window.width <= 900 && isExpanded){
+    //     console.log("closing the menu")
+    //     setIsExpanded(false)
+    // }
 
     const updateNav = () => {
         setIsExpanded(s => !s)
@@ -59,6 +77,7 @@ const Navigation = ({navigation}) => {
                 <NavLink icon={faClock} text="Time Entry" isExpanded={isExpanded} viewToDisplay={"TimeEntryView"}></NavLink>
 
                 <NavLink icon={faSuitcase} text="Travel" isExpanded={isExpanded} viewToDisplay={"TravelView"}></NavLink>
+                <NavLink icon={faLock} text="LogOut" isExpanded={isExpanded} viewToDisplay={""} logOut={'true'}></NavLink>
             </View>
             <View style={tw.style(`px-48 py-24`, isExpanded ? '' : 'hidden')}>
                 <View style={tw`flex-row items-center`}>
