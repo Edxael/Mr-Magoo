@@ -8,9 +8,6 @@ import tw from '../../lib/tailwind';
 import Header from '../../Components/Header'
 import Navigation from '../../Components/Navigation';
 
-// import HomeView from './01-HomeView'
-// import AboutView from './02-AboutView'
-
 import AssignmentsView from './Assignments'
 import ApplicationView from './Application'
 import DocumentsView from './Documents'
