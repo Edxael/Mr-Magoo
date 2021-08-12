@@ -21,7 +21,7 @@ const NavLink = ({ icon, text, isExpanded, children }) => {
     )
 }
 
-const Navigation = () => {
+const Navigation = ({navigation}) => {
     const [isExpanded, setIsExpanded] = React.useState(false)
 
     const updateNav = () => {
@@ -39,11 +39,14 @@ const Navigation = () => {
             </Pressable>
 
             <View>
-                <NavLink icon={faCalendarAlt} text="Assignments" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faCalendarAlt} text="Assignments" isExpanded={isExpanded} onPress={() => { 
+                    console.log("LinkClicked to Assignemtns")
+                    navigation.navigate('AssignmentsView') 
+                    }}></NavLink>
 
-                <NavLink icon={faFileSignature} text="Application" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faFileSignature} text="Application" isExpanded={isExpanded} onPress={() => { navigation.navigate('ApplicationView') }}></NavLink>
 
-                <NavLink icon={faFolderOpen} text="Documents" isExpanded={isExpanded}>
+                <NavLink icon={faFolderOpen} text="Documents" isExpanded={isExpanded} onPress={() => { navigation.navigate('DocumentsView') }}>
                     <View style={tw`pr-12 flex-row items-center`}>
                         <View style={tw`bg-pureblack-20 font-700 rounded-3 px-4 py-2 uppercase`}>
                             <Text style={tw`text-11 text-pureblack-65`}>Beta</Text>
@@ -52,9 +55,9 @@ const Navigation = () => {
                     </View>
                 </NavLink>
 
-                <NavLink icon={faClock} text="Time Entry" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faClock} text="Time Entry" isExpanded={isExpanded} onPress={() => { navigation.navigate('TimeEntryView') }}></NavLink>
 
-                <NavLink icon={faSuitcase} text="Travel" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faSuitcase} text="Travel" isExpanded={isExpanded} onPress={() => { navigation.navigate('TravelView') }}></NavLink>
             </View>
             <View style={tw.style(`px-48 py-24`, isExpanded ? '' : 'hidden')}>
                 <View style={tw`flex-row items-center`}>
