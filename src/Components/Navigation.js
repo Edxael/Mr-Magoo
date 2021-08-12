@@ -3,15 +3,20 @@ import { View, Image, Text, TextInput, Button, Pressable, ScrollView } from 'rea
 import tw from '../lib/tailwind';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faCalendarAlt, faFileSignature, faFolderOpen, faClock, faSuitcase, faPhoneAlt, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import * as RootNavigation from './RootNavigation'
 
-const NavLink = ({ icon, text, isExpanded, children }) => {
+const NavLink = ({ icon, text, isExpanded, children, viewToDisplay }) => {
     return (
         <Pressable 
             style={ s => tw.style(
                 `mx-8 h-48 mt-8 rounded-3 justify-between items-center flex-row`,
                 s.hovered && 'bg-pureblack-10',
                 !s.hovered && 'bg-pureblack-5',
-                )}>
+                )}
+            onPress={() => { 
+                    console.log(`Navigating to: ${viewToDisplay}`)
+                    RootNavigation.navigate(viewToDisplay)
+                    }}>
             <View style={tw`flex-row`}>
                 <FontAwesomeIcon icon={icon} style={tw`px-16`}/>
                 { isExpanded && <Text style={tw`text-16 text-black-800`}>{text}</Text> }
@@ -21,7 +26,7 @@ const NavLink = ({ icon, text, isExpanded, children }) => {
     )
 }
 
-const Navigation = () => {
+const Navigation = ({navigation}) => {
     const [isExpanded, setIsExpanded] = React.useState(false)
 
     const updateNav = () => {
@@ -39,11 +44,11 @@ const Navigation = () => {
             </Pressable>
 
             <View>
-                <NavLink icon={faCalendarAlt} text="Assignments" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faCalendarAlt} text="Assignments" isExpanded={isExpanded} viewToDisplay={"AssignmentsView"}></NavLink>
 
-                <NavLink icon={faFileSignature} text="Application" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faFileSignature} text="Application" isExpanded={isExpanded} viewToDisplay={"ApplicationView"}></NavLink>
 
-                <NavLink icon={faFolderOpen} text="Documents" isExpanded={isExpanded}>
+                <NavLink icon={faFolderOpen} text="Documents" isExpanded={isExpanded} viewToDisplay={"DocumentsView"}>
                     <View style={tw`pr-12 flex-row items-center`}>
                         <View style={tw`bg-pureblack-20 font-700 rounded-3 px-4 py-2 uppercase`}>
                             <Text style={tw`text-11 text-pureblack-65`}>Beta</Text>
@@ -52,9 +57,9 @@ const Navigation = () => {
                     </View>
                 </NavLink>
 
-                <NavLink icon={faClock} text="Time Entry" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faClock} text="Time Entry" isExpanded={isExpanded} viewToDisplay={"TimeEntryView"}></NavLink>
 
-                <NavLink icon={faSuitcase} text="Travel" isExpanded={isExpanded}></NavLink>
+                <NavLink icon={faSuitcase} text="Travel" isExpanded={isExpanded} viewToDisplay={"TravelView"}></NavLink>
             </View>
             <View style={tw.style(`px-48 py-24`, isExpanded ? '' : 'hidden')}>
                 <View style={tw`flex-row items-center`}>
