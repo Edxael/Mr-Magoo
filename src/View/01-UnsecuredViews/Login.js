@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
         setState(s => ({...s, isLoading: true}))
     
         dispatch('auth/login', { username: state.username, password: state.password })
-      }
+    }
 
     return (
         <View style={tw`items-center flex-1 bg-pureblack-0`}>
