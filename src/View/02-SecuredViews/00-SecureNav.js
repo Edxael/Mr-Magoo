@@ -17,29 +17,29 @@ import DocumentsView from './Documents'
 import TimeEntryView from './TimeEntry'
 import TravelView from './Travel'
 
+import { navigationRef } from '../../Components/RootNavigation'
+
 const Stack = createStackNavigator();
 
 const SecureNav = ({navigation}) => {
   return (
-    <View style={tw`flex-1`}>
-        <Header></Header>
-        <View style={tw`flex-row flex-1`}>
-            <Navigation navigation={navigation}></Navigation>
-            <View style={tw`flex-1 z-20`}>
-                <NavigationContainer >
-                    <Stack.Navigator  initialRouteName="AssignmentsView">
-
-                        <Stack.Screen name="AssignmentsView" component={AssignmentsView} options={{ title: 'AssignmentsView title' }} />
-                        <Stack.Screen name="ApplicationView" component={ApplicationView} options={{ title: 'ApplicationView title' }} />
-                        <Stack.Screen name="DocumentsView" component={DocumentsView} options={{ title: 'title DocumentsView' }} />
-                        <Stack.Screen name="TimeEntryView" component={TimeEntryView} options={{ title: 'title TimeEntryView' }} />
-                        <Stack.Screen name="TravelView" component={TravelView} options={{ title: 'title TravelView' }} />
-
-                    </Stack.Navigator>
-                </NavigationContainer>
-            </View>
-        </View>
-    </View>
+    <NavigationContainer ref={navigationRef} >
+      <View style={tw`flex-1`}>
+          <Header></Header>
+          <View style={tw`flex-row flex-1`}>
+              <Navigation navigation={navigation}></Navigation>
+              <View style={tw`flex-1 z-20`}>
+                  <Stack.Navigator  initialRouteName="AssignmentsView">
+                      <Stack.Screen name="AssignmentsView" component={AssignmentsView} options={{ title: 'AssignmentsView title' }} />
+                      <Stack.Screen name="ApplicationView" component={ApplicationView} options={{ title: 'ApplicationView title' }} />
+                      <Stack.Screen name="DocumentsView" component={DocumentsView} options={{ title: 'title DocumentsView' }} />
+                      <Stack.Screen name="TimeEntryView" component={TimeEntryView} options={{ title: 'title TimeEntryView' }} />
+                      <Stack.Screen name="TravelView" component={TravelView} options={{ title: 'title TravelView' }} />
+                  </Stack.Navigator>
+              </View>
+          </View>
+      </View>
+    </NavigationContainer>
   );
 }
 
