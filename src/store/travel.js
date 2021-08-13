@@ -50,8 +50,7 @@ const travel = store => {
             return
           }
 
-          const d = formatTravelData(data)
-          store.dispatch('travel/update/data', d)
+          store.dispatch('travel/update/data', formatTravelData(data))
           store.dispatch('travel/update/loading', false)
         })
         .catch(() => {
