@@ -4,7 +4,7 @@ import tw from '../../lib/tailwind';
 import logo from '../../assets/svg/comphealth-logo.svg'
 import { useStoreon } from 'storeon/react'
 
-const Login = () => {
+const Login = ({ navigation }) => {
 
     const { dispatch } = useStoreon()
     const [state, setState] = React.useState({
@@ -19,7 +19,7 @@ const Login = () => {
         setState(s => ({...s, isLoading: true}))
     
         dispatch('auth/login', { username: state.username, password: state.password })
-      }
+    }
 
     return (
         <View style={tw`items-center flex-1 bg-pureblack-0`}>
@@ -38,7 +38,10 @@ const Login = () => {
                 <View style={tw`w-full my-24`}>
                     <View style={tw`flex-row justify-between`}>
                         <Text style={tw`text-12 text-black-700`}>Password</Text>
-                        <Text style={tw`text-12 text-highlight-800`} href="#">Forgot Password ?</Text>
+                        <Text style={tw`text-12 text-highlight-800`} href="#" onPress={() => { 
+                            console.log("Nav-away..") 
+                            navigation.navigate('ForgotPassword')
+                            } }>Forgot Password </Text>
                     </View>
                     <TextInput 
                         secureTextEntry="true"

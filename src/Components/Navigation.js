@@ -1,11 +1,16 @@
 import React from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Image, Text, Pressable, useWindowDimensions } from 'react-native'
 import tw from '../lib/tailwind'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faCalendarAlt, faFileSignature, faFolderOpen, faClock, faSuitcase, faPhoneAlt, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
+import { faCalendarAlt, faFileSignature, faFolderOpen, faClock, faSuitcase, faPhoneAlt, faChevronRight, faChevronLeft, faLock } from '@fortawesome/free-solid-svg-icons'
 import * as RootNavigation from './RootNavigation'
+import { useStoreon } from 'storeon/react'
 
-const NavLink = ({ icon, text, isExpanded, children, viewToDisplay, navigation }) => {
+const NavLink = ({ icon, text, isExpanded, children, viewToDisplay, logOut }) => {
+  const { dispatch } = useStoreon()
+  const handleLogOut = async => {
+    dispatch('auth/logout', {})
+  }
   return (
     <Pressable
       style={s => tw.style(
@@ -13,6 +18,10 @@ const NavLink = ({ icon, text, isExpanded, children, viewToDisplay, navigation }
         RootNavigation.getCurrentRoute()?.name === viewToDisplay || s.hovered ? 'bg-pureblack-10' : 'bg-pureblack-5'
       )}
       onPress={() => {
+        if (logOut) {
+          console.log('Login you OUT...')
+          handleLogOut()
+        }
         RootNavigation.navigate(viewToDisplay)
       }}
     >
@@ -26,10 +35,17 @@ const NavLink = ({ icon, text, isExpanded, children, viewToDisplay, navigation }
 }
 
 const Navigation = ({ navigation }) => {
+  const window = useWindowDimensions()
+  console.log(window)
+
   const [isExpanded, setIsExpanded] = React.useState(false)
 
+  // if(window.width <= 900 && isExpanded){
+  //     console.log("closing the menu")
+  //     setIsExpanded(false)
+  // }
+
   const updateNav = () => {
-    // console.log(navigation)
     setIsExpanded(s => !s)
   }
 
@@ -44,11 +60,11 @@ const Navigation = ({ navigation }) => {
       </Pressable>
 
       <View>
-        <NavLink icon={faCalendarAlt} text='Assignments' isExpanded={isExpanded} viewToDisplay='AssignmentsView' navigation={navigation} />
+        <NavLink icon={faCalendarAlt} text='Assignments' isExpanded={isExpanded} viewToDisplay='AssignmentsView' />
 
-        <NavLink icon={faFileSignature} text='Application' isExpanded={isExpanded} viewToDisplay='ApplicationView' navigation={navigation} />
+        <NavLink icon={faFileSignature} text='Application' isExpanded={isExpanded} viewToDisplay='ApplicationView' />
 
-        <NavLink icon={faFolderOpen} text='Documents' isExpanded={isExpanded} viewToDisplay='DocumentsView' navigation={navigation}>
+        <NavLink icon={faFolderOpen} text='Documents' isExpanded={isExpanded} viewToDisplay='DocumentsView'>
           <View style={tw`pr-12 flex-row items-center`}>
             <View style={tw`bg-pureblack-20 font-700 rounded-3 px-4 py-2 uppercase`}>
               <Text style={tw`text-11 text-pureblack-65`}>Beta</Text>
@@ -57,9 +73,11 @@ const Navigation = ({ navigation }) => {
           </View>
         </NavLink>
 
-        <NavLink icon={faClock} text='Time Entry' isExpanded={isExpanded} viewToDisplay='TimeEntryView' navigation={navigation} />
+        <NavLink icon={faClock} text='Time Entry' isExpanded={isExpanded} viewToDisplay='TimeEntryView' />
 
-        <NavLink icon={faSuitcase} text='Travel' isExpanded={isExpanded} viewToDisplay='TravelView' navigation={navigation} />
+        <NavLink icon={faSuitcase} text='Travel' isExpanded={isExpanded} viewToDisplay='TravelView' />
+
+        <NavLink icon={faLock} text='LogOut' isExpanded={isExpanded} viewToDisplay='' logOut='true' />
       </View>
       <View style={tw.style('px-48 py-24', isExpanded ? '' : 'hidden')}>
         <View style={tw`flex-row items-center`}>
