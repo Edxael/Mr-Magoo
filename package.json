@@ -8,12 +8,13 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-navigation/native": "^6.0.2",
-    "@react-navigation/stack": "^6.0.4",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-native-fontawesome": "^0.2.7",
+    "@react-navigation/native": "^6.0.2",
+    "@react-navigation/stack": "^6.0.4",
     "@storeon/localstorage": "^1.4.0",
+    "dayjs": "^1.10.6",
     "expo": "~42.0.3",
     "expo-status-bar": "~1.0.4",
     "react": "^17.0.2",
@@ -26,7 +27,8 @@
     "tailwind-react-native-classnames": "^1.4.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0"
+    "@babel/core": "^7.15.0",
+    "standard": "^16.0.3"
   },
   "private": true
 }

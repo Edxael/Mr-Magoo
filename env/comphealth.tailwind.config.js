@@ -11,7 +11,7 @@ module.exports = {
         600: '#5E4775',
         700: '#553F6C',
         800: '#4B3A62',
-        900: '#3C304C',
+        900: '#3C304C'
       },
       black: {
         50: '#FEF7FF',
@@ -23,7 +23,7 @@ module.exports = {
         600: '#6F6A75',
         700: '#5C5661',
         800: '#3D3842',
-        900: '#1D1722',
+        900: '#1D1722'
       },
       secondary: {
         50: '#FFEEEF',
@@ -35,11 +35,11 @@ module.exports = {
         600: '#CC5343',
         700: '#B34334',
         800: '#992617',
-        900: '#80261B',
-      },
+        900: '#80261B'
+      }
     },
     fontFamily: {
-      default: 'TTNorms, Helvetica Neue, Arial, Helvetica, sans-serif',
-    },
-  },
+      default: 'TTNorms, Helvetica Neue, Arial, Helvetica, sans-serif'
+    }
+  }
 }

@@ -1,21 +1,20 @@
-import React from 'react';
+import React from 'react'
 import UnSecureNav from './01-UnsecuredViews/00-UnSecureNav'
 import SecureNav from './02-SecuredViews/00-SecureNav'
 import { useStoreon } from 'storeon/react'
 
 const MainNavigation = () => {
-    const { auth } = useStoreon('auth')
+  const { auth } = useStoreon('auth')
 
-    let isUserLoggedIn = false;
-    if (auth.isAuthenticated){
-       return (
-        <SecureNav/>
-      );
-    } else {
-        return (
-        <UnSecureNav />
-    );
-    }
+  if (auth.isAuthenticated) {
+    return (
+      <SecureNav />
+    )
+  } else {
+    return (
+      <UnSecureNav />
+    )
+  }
 }
 
-export default MainNavigation;
+export default MainNavigation

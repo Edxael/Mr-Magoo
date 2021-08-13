@@ -28,7 +28,7 @@ module.exports = {
         15: '#D9D9D9',
         10: '#E6E6E6',
         5: '#F2F2F2',
-        0: '#FFFFFF',
+        0: '#FFFFFF'
       },
       success: {
         50: '#E3F2F1',
@@ -40,7 +40,7 @@ module.exports = {
         600: '#428d81',
         700: '#3c7d71',
         800: '#376d62',
-        900: '#2d5047',
+        900: '#2d5047'
       },
       error: {
         50: '#FDECED',
@@ -52,7 +52,7 @@ module.exports = {
         600: '#EC432B',
         700: '#D93A25',
         800: '#CC331E',
-        900: '#BD2711',
+        900: '#BD2711'
       },
       highlight: {
         50: '#EAF2F8',
@@ -64,9 +64,9 @@ module.exports = {
         600: '#5C88B7',
         700: '#427CAF',
         800: '#1F71A8',
-        900: '#175286',
+        900: '#175286'
       },
-      transparent: 'transparent',
+      transparent: 'transparent'
     },
     borderRadius: {
       0: '0',
@@ -88,7 +88,7 @@ module.exports = {
       24: '24px',
       32: '32px',
       48: '48px',
-      64: '64px',
+      64: '64px'
     },
     fontWeight: {
       100: 100,
@@ -99,10 +99,11 @@ module.exports = {
       600: 600,
       700: 700,
       800: 800,
-      900: 900,
+      900: 900
     },
     spacing: {
       0: '0px',
+      1: '1px',
       2: '2px',
       4: '4px',
       6: '6px',
@@ -187,6 +188,7 @@ module.exports = {
       624: '624px',
       632: '632px',
       640: '640px',
+      '3/4': '75%'
     },
     opacity: {
       0: '0',
@@ -199,76 +201,77 @@ module.exports = {
       70: '.7',
       80: '.8',
       90: '.9',
-      100: '1',
+      100: '1'
     },
     minHeight: {
       32: '32px',
       80: '80px',
       160: '160px',
-      2400: '2400px',
+      2400: '2400px'
     },
     minWidth: {
       160: '160px',
       352: '352px',
-      '1/2': '50%',
+      '1/2': '50%'
     },
     maxWidth: {
       248: '248px',
       352: '352px',
       632: '632px',
+      680: '680px'
     },
     boxShadow: theme => ({
       1: `0 2px 4px 0 ${theme('colors.black.900')}26`,
       6: `0px 6px 10px ${theme('colors.black.900')}24, 0px 1px 18px ${theme('colors.black.900')}1F, 0px 3px 5px ${theme('colors.black.900')}33`,
       8: `0 8px 10px 1px ${theme('colors.black.900')}24, 0 3px 14px 3px ${theme('colors.black.900')}1F, 0 4px 5px 0 ${theme('colors.black.900')}33`,
-      24: `0 24px 38px 3px ${theme('colors.black.900')}24, 0 9px 46px 8px ${theme('colors.black.900')}1F, 0 11px 15px 0 ${theme('colors.black.900')}33`,
+      24: `0 24px 38px 3px ${theme('colors.black.900')}24, 0 9px 46px 8px ${theme('colors.black.900')}1F, 0 11px 15px 0 ${theme('colors.black.900')}33`
     }),
     screens: {
       xs: '480px',
       sm: '768px',
       md: '992px',
       lg: '1200px',
-      xl: '1600px',
-    },
+      xl: '1600px'
+    }
   },
   variants: {
     textColor: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
     backgroundColor: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
     borderColor: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
     borderWidth: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
     cursor: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
     padding: [
       'responsive',
       'hover',
       'focus',
-      'disabled',
+      'disabled'
     ],
-    transitionProperty: ['responsive', 'hover', 'focus'],
+    transitionProperty: ['responsive', 'hover', 'focus']
   },
-  plugins: [],
+  plugins: []
 }
