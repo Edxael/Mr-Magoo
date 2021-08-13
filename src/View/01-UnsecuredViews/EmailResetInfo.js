@@ -4,7 +4,7 @@ import tw from '../../lib/tailwind';
 import logo from '../../assets/svg/comphealth-logo.svg'
 import { useStoreon } from 'storeon/react'
 
-const ForgotPassword = ({ navigation }) => {
+const EmailResetInfo = ({ navigation }) => {
 
     const { dispatch } = useStoreon()
     const [state, setState] = React.useState({
@@ -16,7 +16,6 @@ const ForgotPassword = ({ navigation }) => {
 
     const handleSubmit = async e => {
         console.log("Executing password reset...")
-        navigation.navigate('EmailResetInfo')
     }
 
     return (
@@ -25,32 +24,16 @@ const ForgotPassword = ({ navigation }) => {
                 <Image source={logo} style={tw`h-64 w-160`} />
             </View>
             <View style={tw`w-352`}>
-                <Text style={tw`pt-56 pb-40 text-21 text-black-800 text-center`}>Reset password</Text>                
+                <Text style={tw`pt-56 pb-40 text-21 text-black-800 text-center`}>Password Reset</Text>                
                 <View style={tw`w-full mb-16`}>
-                    <Text style={tw`text-12 text-black-700`}>Enter your email address</Text>
-                    <TextInput 
-                        style={tw`mt-8 h-48 bg-pureblack-5 rounded-3 border border-pureblack-10 text-14 px-12 text-black-800`}
-                        onChangeText={text => setState(s => ({...s, username: text}))}>
-                    </TextInput>
+                    <Text>An Email with instructions in how to reset your Password has been send, please check your email.</Text>
                 </View>
-
-                <Pressable 
-                    accessibilityRole="button"
-                    style={s => tw.style(
-                        'h-48 rounded-3 items-center justify-center',
-                        s.hovered && 'bg-primary-400', 
-                        !s.hovered && 'bg-primary-500')
-                        }
-                    onPress={handleSubmit}
-                    >
-                        <Text style={tw`text-pureblack-0 text-16`}>Click to reset password </Text>
-                </Pressable>
 
                 <View
                     style={{
                         borderBottomColor: 'black',
                         borderBottomWidth: 3,
-                        marginTop: 30,
+                        marginTop: 20,
                         marginBottom: 8,
                     }}
                 />
@@ -72,4 +55,4 @@ const ForgotPassword = ({ navigation }) => {
     )
 }
 
-export default ForgotPassword
+export default EmailResetInfo
