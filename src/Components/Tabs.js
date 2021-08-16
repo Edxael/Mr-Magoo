@@ -1,18 +1,16 @@
 import React from 'react'
-import { View, Text, Pressable } from 'react-native'
+import { View, Text, Pressable, ScrollView } from 'react-native'
 import tw from '../lib/tailwind'
 
 export const Tabs = ({ children }) => {
   const [selectedTab, setSelectedTab] = React.useState(0)
-
-  console.log(children)
 
   return (
     <View>
       <View style={tw`flex-row h-48 items-center border-b border-pureblack-20`}>
         {children.map((child, index) =>
           <Pressable
-            key={child.name}
+            key={child.props.name}
             style={s => tw.style(
               'px-16 h-full items-center justify-center',
               selectedTab === index && 'border-b-4',
@@ -34,7 +32,7 @@ export const Tabs = ({ children }) => {
       </View>
 
       <View>
-        {children.map((child, index) => selectedTab === index && <View>{child}</View>)}
+        {children.map((child, index) => selectedTab === index && <View key={child.props.name}>{child}</View>)}
       </View>
     </View>
   )
@@ -42,6 +40,6 @@ export const Tabs = ({ children }) => {
 
 export const Tab = ({ title, children }) => {
   return (
-    { children }
+    <ScrollView>{children}</ScrollView>
   )
 }

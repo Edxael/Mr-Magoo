@@ -24,6 +24,7 @@ const assignments = store => {
   store.on('assignments/update/loading', (state, loading) => ({ assignments: { ...state.assignments, loading } }))
   store.on('assignments/update/data', (state, data) => ({ assignments: { ...state.assignments, ...data } }))
   store.on('assignments/update/error', (state, error) => ({ assignments: { ...state.assignments, error } }))
+  store.on('assignments/update/selectAssignment', (state, selectedAssignment) => ({ assignments: { ...state.assignments, selectedAssignment } }))
 
   store.on('assignments/get', async (state) => {
     if (state.auth.isAuthenticated) {

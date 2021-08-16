@@ -38,7 +38,7 @@ const Navigation = ({ navigation }) => {
   const window = useWindowDimensions()
   console.log(window)
 
-  const [isExpanded, setIsExpanded] = React.useState(false)
+  const [isExpanded, setIsExpanded] = React.useState(true)
 
   // if(window.width <= 900 && isExpanded){
   //     console.log("closing the menu")
