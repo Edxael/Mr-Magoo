@@ -6,6 +6,7 @@ import { View } from 'react-native';
 
 import Login from './Login'
 import ForgotPassword from './02-FogotPassword'
+import EmailResetInfo from './EmailResetInfo'
 
 const Stack = createStackNavigator();
 
@@ -17,6 +18,7 @@ const UnSecureNav = ({navigation}) => {
         <Stack.Navigator initialRouteName="Login" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Login" component={Login} />
             <Stack.Screen name="ForgotPassword" component={ForgotPassword}/>
+            <Stack.Screen name="EmailResetInfo" component={EmailResetInfo}/>
         </Stack.Navigator>
     </NavigationContainer>
       
